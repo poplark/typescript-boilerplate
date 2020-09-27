@@ -1,0 +1,19 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "功能：快速创建一个标准的 typescript 代码库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poplark/typescript-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poplark/typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/poplark/typescript-boilerplate#readme"
+}
