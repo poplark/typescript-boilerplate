@@ -2,7 +2,10 @@
   "name": "typescript-boilerplate",
   "version": "1.0.0",
   "description": "功能：快速创建一个标准的 typescript 代码库",
-  "main": "index.js",
+  "bin": {
+    "tb": "bin/tb.js"
+  },
+  "main": "bin/tb.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
-  "homepage": "https://github.com/poplark/typescript-boilerplate#readme"
+  "homepage": "https://github.com/poplark/typescript-boilerplate#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "fs-extra": "^9.0.1",
+    "minimist": "^1.2.5"
+  }
 }

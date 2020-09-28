@@ -22,7 +22,8 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "noUnusedParameters": true,
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src/**/*"
