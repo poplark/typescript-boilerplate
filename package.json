@@ -1,5 +1,5 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "@popak/typescript-boilerplate",
   "version": "0.1.1",
   "description": "功能：快速创建一个标准的 typescript 代码库",
   "bin": {
