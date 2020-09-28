@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk');
-const minimist = require('minimist');
-
 const program = require('commander');
+const minimist = require('minimist');
 
 program
   .command('create <typescript-program-name>')
