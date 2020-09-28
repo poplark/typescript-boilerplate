@@ -1,6 +1,6 @@
 {
   "name": "typescript-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "功能：快速创建一个标准的 typescript 代码库",
   "bin": {
     "tb": "bin/tb.js"
@@ -13,8 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/poplark/typescript-boilerplate.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "poplark",
+    "email": "songkang666@126.com",
+    "url": "https://github.com/poplark"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
