@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "rootDir": "src",
-    "outDir": "build",
+    "outDir": "types",
     "newLine": "LF",
     "lib": [
       "es2015",

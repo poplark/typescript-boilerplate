@@ -2,4 +2,7 @@ node_modules
 
 yarn-error.log
 
+dest
 build
+lib
+types
