@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const webpack = require('webpack');
 const package = require('../package.json');
@@ -11,21 +12,23 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: ['.ts', '.js'],
   },
   module: {
-    rules: [{
-      test: /\.ts$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'ts-loader'
-      }
-    }]
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.BannerPlugin(`${package.description}\n \n@author ${package.author.name}\n@license ${package.license}`),
     new webpack.DefinePlugin({
-      __VERSION__: JSON.stringify(package.version)
-    })
-  ]
-}
+      __VERSION__: JSON.stringify(package.version),
+    }),
+  ],
+};
