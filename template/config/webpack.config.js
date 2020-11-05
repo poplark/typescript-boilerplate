@@ -10,6 +10,7 @@ module.exports = {
     library: package.name,
     filename: 'index.js',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   resolve: {
     extensions: ['.ts', '.js'],
