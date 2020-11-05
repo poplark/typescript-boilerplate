@@ -1,6 +1,6 @@
 {
   "name": "@popak/typescript-boilerplate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "功能：快速创建一个标准的 typescript 代码库",
   "bin": {
     "tsb": "bin/tsb.js"
