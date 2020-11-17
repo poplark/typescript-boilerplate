@@ -6,7 +6,7 @@ const package = require('../package.json');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, '../lib'),
+    path: path.resolve(__dirname, '../dist'),
     library: package.name,
     filename: 'index.js',
     libraryTarget: 'umd',
