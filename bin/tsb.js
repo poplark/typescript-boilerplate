@@ -1,35 +1,39 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk');
-const program = require('commander');
+const { program } = require('commander');
 const minimist = require('minimist');
+const pkg = require('../package.json');
+
+program.version(pkg.version, '-v, --version', `Display current verion`);
+program.helpOption('-h, --help', `Read more information: ${chalk.underline('https://github.com/poplark/typescript-boilerplate')}`);
 
 program
   .command('create <typescript-program-name>')
-  .description(`创建一个新的 typescript 项目`)
-  .option('-d, --default', `默认`)
-  .option('-o, --output', `输出`)
-  .action((name, cmd) => {
+  .description(`Create a typescript project.`)
+  .action((programName, cmd) => {
     const options = cleanArgs(cmd);
-    require('../lib/create')(name, options);
+    require('../lib/create')(programName, options);
   });
 
 // output help information on unknown commands
 program.arguments('<command>').action(cmd => {
   program.outputHelp();
-  console.log(`  ` + chalk.green(`未知命令 ${chalk.info(cmd)}.`));
+  console.log(`  ` + chalk.yellow(`Unknown command ${chalk.red(cmd)}.`));
   console.log();
 });
 
-program.on('--help', () => {
-  console.log();
-  console.log(`  Run ${chalk.blue(`tb <command> --help`)}`);
-  console.log();
-});
+// program.on('-h --help', () => {
+//   console.log();
+//   console.log(`  Run ${chalk.blue(`tb <command> --help`)}`);
+//   console.log();
+// });
+/**
+ * 监听每个 command 的 help 行为
+ */
+// program.commands.forEach(command => command.on('--help', () => console.log()));
 
-program.commands.forEach(c => c.on('--help', () => console.log()));
-
-if (!process.argv.slice(3).length) {
+if (!process.argv.slice(2).length) {
   return program.outputHelp();
 }
 
