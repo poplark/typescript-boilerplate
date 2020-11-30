@@ -27,7 +27,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.BannerPlugin(`${package.description}\n \n@author ${package.author.name}\n@license ${package.license}`),
+    new webpack.BannerPlugin(`${package.description}\n \n@author ${package.author ? package.author.name ? package.author.name : package.author : ''}\n@license ${package.license}`),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(package.version),
     }),
