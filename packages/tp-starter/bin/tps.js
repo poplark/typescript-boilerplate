@@ -9,7 +9,7 @@ program.version(pkg.version, '-v, --version', `Display current verion`);
 program.helpOption('-h, --help', `Read more information: ${chalk.underline('https://github.com/poplark/typescript-boilerplate')}`);
 
 program
-  .command('create <typescript-program-name>')
+  .command('create <typescript-project-name>')
   .description(`Create a typescript project.`)
   .action((programName, cmd) => {
     const { create } = require('../lib/main');
