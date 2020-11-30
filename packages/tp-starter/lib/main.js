@@ -10,7 +10,7 @@ const initTSDocQuestion = require('./questions/initTSDoc');
 const authorNameQuestion = require('./questions/authorName');
 const authorEmailQuestion = require('./questions/authorEmail');
 const projectDescriptionQuestion = require('./questions/projectDescription');
-const { hasGit } = require('./utils/envDetect');
+const { hasGit } = require('@popark/tp-share-utils');
 const { clearConsole } = require('./utils/clearConsole');
 
 const { GetAuthor } = require('./tasks/getAuthor');
@@ -20,6 +20,8 @@ const { WritePkg } = require('./tasks/writePkg');
 const { WriteReadme } = require('./tasks/writeReadme');
 const { CopyConfigurations } = require('./tasks/copyConfigurations');
 const { CopyBoilerplate } = require('./tasks/copyBoilerplate');
+const { InitGitRepo } = require('./tasks/initGitRepo');
+const { InstallNodeModules } = require('./tasks/installNodeModules');
 const { Scheduler } = require('./tasks/scheduler');
 
 function run(context, pkgName, options) {
@@ -58,6 +60,12 @@ function run(context, pkgName, options) {
 
     const copyBoilerplateTask = new CopyBoilerplate(context, options);
     scheduler.add(copyBoilerplateTask);
+
+    const initGitRepoTask = new InitGitRepo(context, options);
+    scheduler.add(initGitRepoTask, writePkgTask);
+
+    const installNodeModulesTask = new InstallNodeModules(context, options);
+    scheduler.add(installNodeModulesTask, writePkgTask);
 
     scheduler.start();
   });

@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 const { Task } = require('./task');
-const { hasGit } = require('../utils/envDetect');
+const { hasGit } = require('@popark/tp-share-utils');
 
 class GetAuthor extends Task {
   constructor(context, options) {

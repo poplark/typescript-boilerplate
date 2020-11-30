@@ -1,8 +1,8 @@
-const envDetect = require('../utils/envDetect');
+const { hasYarn } = require('@popark/tp-share-utils');
 
 const packageManagers = [
   { name: 'Npm', value: 'npm', short: 'Npm', disabled: false },
-  { name: 'Yarn', value: 'yarn', short: 'Yarn', disabled: !envDetect.hasYarn() },
+  { name: 'Yarn', value: 'yarn', short: 'Yarn', disabled: !hasYarn() },
 ];
 
 module.exports = {
