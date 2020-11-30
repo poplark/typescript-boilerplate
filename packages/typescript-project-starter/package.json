@@ -1,0 +1,39 @@
+{
+  "name": "@popark/typescript-project-starter",
+  "version": "0.0.1",
+  "description": "A fast starter to create a normal typescript project",
+  "keywords": [
+    "typescript",
+    "project",
+    "starter",
+    "boilerplate"
+  ],
+  "author": "poplark <songkang666@126.com>",
+  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/typescript-project-starter#readme",
+  "license": "MIT",
+  "main": "bin/tps.js",
+  "bin": {
+    "tps": "bin/tps.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poplark/typescript-boilerplate.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/poplark/typescript-boilerplate/issues"
+  }
+}
