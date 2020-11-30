@@ -11,5 +11,7 @@
 7. 自动安装依赖库
 
 todo
-1. 支持 gulp
-2. 支持 rollup
+1. 支持 gulp x
+2. 支持 rollup √
+3. 添加 rollup 模板，配置文件等
+4. 使用 lerna 管理 webpack, rollup 等模板库
