@@ -1,7 +1,21 @@
+功能：快速创建一个标准的 typescript 项目代码库
 
-功能：快速创建一个标准的 typescript 代码库
+## Usage
 
-功能点：
+全局安装
+
+```
+npm install -g @popark/tp-starter
+```
+
+命令行创建项目
+
+```
+tps create xxx
+```
+
+## Features
+
 1. 使用 typedoc 生成文档
 2. 使用 eslint, prettier 规范代码
 3. 使用 husky, lint-staged, pre-commit 进行代码提交检查修正
