@@ -20,7 +20,7 @@ module.exports.Scheduler = class Scheduler extends EventEmitter {
         // 主动触发未执行任务
         // todo - 改成被动通知？？？
         this.todoTasks.forEach(item => {
-          item.watch(this.doneTasks);
+          item.hooks(this.doneTasks);
         });
       }
     });
@@ -31,7 +31,7 @@ module.exports.Scheduler = class Scheduler extends EventEmitter {
     this.emit('start');
     // 触发未执行任务
     this.todoTasks.forEach(item => {
-      item.watch(this.doneTasks);
+      item.hooks(this.doneTasks);
     });
   }
 }

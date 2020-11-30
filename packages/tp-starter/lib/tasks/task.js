@@ -33,7 +33,7 @@ class Task extends EventEmitter {
     this.done();
   }
 
-  watch(doneTaskList) {
+  hooks(doneTaskList) {
     if (this.hasStarted) return;
     // todo - 使用 proxy 监听 doneList ?? 自动触发后续比对?
     // 比对

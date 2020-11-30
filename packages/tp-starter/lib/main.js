@@ -18,6 +18,8 @@ const { GetPkg } = require('./tasks/getPkg');
 const { GetReadme } = require('./tasks/getReadme');
 const { WritePkg } = require('./tasks/writePkg');
 const { WriteReadme } = require('./tasks/writeReadme');
+const { CopyConfigurations } = require('./tasks/copyConfigurations');
+const { CopyBoilerplate } = require('./tasks/copyBoilerplate');
 const { Scheduler } = require('./tasks/scheduler');
 
 function run(context, pkgName, options) {
@@ -50,6 +52,12 @@ function run(context, pkgName, options) {
 
     const writeReadmeTask = new WriteReadme(context, options);
     scheduler.add(writeReadmeTask, getReadmeTask);
+
+    const copyConfigurationsTask = new CopyConfigurations(context, options);
+    scheduler.add(copyConfigurationsTask);
+
+    const copyBoilerplateTask = new CopyBoilerplate(context, options);
+    scheduler.add(copyBoilerplateTask);
 
     scheduler.start();
   });
@@ -100,8 +108,6 @@ exports.create = async function(projectName) {
   console.log(options);
 
   await run(context, pkgName, options);
-
-  // require('./writeTemplates')(context, path.join(__dirname, '../template'));
 
   // const { execGit, execInstallPkg } = require('./execCommand');
   // await execGit(context);

@@ -35,5 +35,11 @@
   },
   "bugs": {
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
+  },
+  "dependencies": {
+    "@popark/tp-configuration": "^0.0.1",
+    "@popark/tp-rollup-boilerplate": "^0.0.1",
+    "@popark/tp-share-utils": "^0.0.1",
+    "@popark/tp-webpack-boilerplate": "^0.0.1"
   }
 }

@@ -13,8 +13,9 @@ program
   .description(`Create a typescript project.`)
   .action((programName, cmd) => {
     const { create } = require('../lib/main');
-    create(programName).then((res) => {
-      console.log(`Create project ${programName} done.`, res);
+    const start = Date.now();
+    create(programName).then(() => {
+      console.log(`Create project ${programName} done.`, Date.now() - start, 'ms');
     }).catch(err => {
       console.error(`Create project ${programName} error: `, err);
     });
