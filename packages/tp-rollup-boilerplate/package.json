@@ -1,20 +1,22 @@
 {
-  "name": "@popark/tp-configuration",
+  "name": "@popark/tp-rollup-boilerplate",
   "version": "0.0.1",
-  "description": "Common configuration of typescript project created by tps",
+  "description": "A boilerplate of typescript project with rollup.",
   "keywords": [
     "typescript",
-    "project",
-    "configuration"
+    "rollup",
+    "boilerplate"
   ],
   "author": "poplark <songkang666@126.com>",
-  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/tp-configuration#readme",
+  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/tp-rollup-boilerplate#readme",
   "license": "MIT",
+  "main": "lib/tp-rollup-boilerplate.js",
   "directories": {
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "configs"
+    "src"
   ],
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"

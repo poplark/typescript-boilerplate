@@ -1,20 +1,23 @@
 {
-  "name": "@popark/tp-configuration",
+  "name": "@popark/tp-webpack-boilerplate",
   "version": "0.0.1",
-  "description": "Common configuration of typescript project created by tps",
+  "description": "A boilerplate of typescript project with webpack.",
   "keywords": [
     "typescript",
-    "project",
-    "configuration"
+    "webpack",
+    "boilerplate"
   ],
   "author": "poplark <songkang666@126.com>",
-  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/tp-configuration#readme",
+  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/tp-webpack-boilerplate#readme",
   "license": "MIT",
+  "main": "lib/tp-webpack-boilerplate.js",
   "directories": {
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "configs"
+    "src",
+    "config"
   ],
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"
