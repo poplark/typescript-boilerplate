@@ -1,0 +1,34 @@
+{
+  "name": "@popark/tp-configuration",
+  "version": "0.0.1",
+  "description": "Common configuration of typescript project created by tps",
+  "keywords": [
+    "typescript",
+    "project",
+    "configuration"
+  ],
+  "author": "poplark <songkang666@126.com>",
+  "homepage": "https://github.com/poplark/typescript-boilerplate/tree/master/packages/tp-configuration#readme",
+  "license": "MIT",
+  "main": "lib/tp-configuration.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poplark/typescript-boilerplate.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/poplark/typescript-boilerplate/issues"
+  }
+}
