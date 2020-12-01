@@ -1,5 +1,5 @@
 const { Task } = require('./task');
-const { execCommand, hasGit } = require('@popark/tp-share-utils');
+const { execCommand, hasGit } = require('@popak/tp-share-utils');
 
 class InitGitRepo extends Task {
   constructor(context, options) {

@@ -1,5 +1,5 @@
 {
-  "name": "@popark/tp-configuration",
+  "name": "@popak/tp-configuration",
   "version": "0.1.1",
   "description": "Common configuration of typescript project created by tps",
   "keywords": [
@@ -33,7 +33,7 @@
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
   "dependencies": {
-    "@popark/tp-share-utils": "^0.1.1"
+    "@popak/tp-share-utils": "^0.1.1"
   },
-  "gitHead": "557f78406f54adc2869f00e849d96e48969f1880"
+  "gitHead": "cf57d73b5e4cd62e8803bb6fe924cb893d545a3c"
 }

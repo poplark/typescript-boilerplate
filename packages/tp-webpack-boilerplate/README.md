@@ -1,4 +1,4 @@
-# `@popark/tp-webpack-boilerplate`
+# `@popak/tp-webpack-boilerplate`
 
 > Boilerplate with webpack of typescript project created by tp-starter.
 

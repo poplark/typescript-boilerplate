@@ -1,11 +1,11 @@
-# `@popark/tp-share-utils`
+# `@popak/tp-share-utils`
 
 > TODO: description
 
 ## Usage
 
 ```
-const tpShareUtils = require('@popark/tp-share-utils');
+const tpShareUtils = require('@popak/tp-share-utils');
 
 // TODO: DEMONSTRATE API
 ```

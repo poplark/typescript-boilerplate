@@ -1,6 +1,6 @@
 const { Task } = require('./task');
-const { write } = require('@popark/tp-share-utils');
-const tpConfiguration = require('@popark/tp-configuration');
+const { write } = require('@popak/tp-share-utils');
+const tpConfiguration = require('@popak/tp-configuration');
 
 class CopyConfigurations extends Task {
   constructor(context, options) {

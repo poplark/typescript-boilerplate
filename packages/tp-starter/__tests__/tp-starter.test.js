@@ -2,6 +2,6 @@
 
 const tpStarter = require('../lib/main');
 
-describe('@popark/tp-starter', () => {
+describe('@popak/tp-starter', () => {
     it('needs tests');
 });

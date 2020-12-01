@@ -1,4 +1,4 @@
-const { hasYarn } = require('@popark/tp-share-utils');
+const { hasYarn } = require('@popak/tp-share-utils');
 
 const packageManagers = [
   { name: 'Npm', value: 'npm', short: 'Npm', disabled: false },

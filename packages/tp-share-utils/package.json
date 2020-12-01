@@ -1,5 +1,5 @@
 {
-  "name": "@popark/tp-share-utils",
+  "name": "@popak/tp-share-utils",
   "version": "0.1.1",
   "description": "Common utils of typescript project",
   "keywords": [
@@ -32,5 +32,5 @@
   "bugs": {
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
-  "gitHead": "557f78406f54adc2869f00e849d96e48969f1880"
+  "gitHead": "cf57d73b5e4cd62e8803bb6fe924cb893d545a3c"
 }

@@ -10,7 +10,7 @@ const initTSDocQuestion = require('./questions/initTSDoc');
 const authorNameQuestion = require('./questions/authorName');
 const authorEmailQuestion = require('./questions/authorEmail');
 const projectDescriptionQuestion = require('./questions/projectDescription');
-const { hasGit } = require('@popark/tp-share-utils');
+const { hasGit } = require('@popak/tp-share-utils');
 const { clearConsole } = require('./utils/clearConsole');
 
 const { GetAuthor } = require('./tasks/getAuthor');

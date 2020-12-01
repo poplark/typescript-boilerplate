@@ -1,4 +1,4 @@
-# `@popark/tp-configuration`
+# `@popak/tp-configuration`
 
 > Configuration of typescript project created by tp-starter
 

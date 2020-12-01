@@ -2,6 +2,6 @@
 
 const tpShareUtils = require('..');
 
-describe('@popark/tp-share-utils', () => {
+describe('@popak/tp-share-utils', () => {
     it('needs tests');
 });

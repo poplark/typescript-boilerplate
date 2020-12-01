@@ -2,6 +2,6 @@
 
 const tpRollupBoilerplate = require('..');
 
-describe('@popark/tp-rollup-boilerplate', () => {
+describe('@popak/tp-rollup-boilerplate', () => {
     it('needs tests');
 });

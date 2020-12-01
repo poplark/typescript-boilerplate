@@ -2,6 +2,6 @@
 
 const tpWebpackBoilerplate = require('..');
 
-describe('@popark/tp-webpack-boilerplate', () => {
+describe('@popak/tp-webpack-boilerplate', () => {
     it('needs tests');
 });

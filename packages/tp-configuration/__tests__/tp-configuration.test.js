@@ -2,6 +2,6 @@
 
 const tpConfiguration = require('..');
 
-describe('@popark/tp-configuration', () => {
+describe('@popak/tp-configuration', () => {
     it('needs tests');
 });

@@ -1,5 +1,5 @@
 const path = require('path');
-const { getReadStreamMap } = require('@popark/tp-share-utils');
+const { getReadStreamMap } = require('@popak/tp-share-utils');
 
 module.exports.run = async function() {
   let result = new Map();

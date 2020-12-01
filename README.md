@@ -5,7 +5,7 @@
 全局安装
 
 ```
-npm install -g @popark/tp-starter
+npm install -g @popak/tp-starter
 ```
 
 命令行创建项目

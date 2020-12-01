@@ -1,7 +1,7 @@
 const { Task } = require('./task');
-const { write } = require('@popark/tp-share-utils');
-const tpRollupTemplates = require('@popark/tp-rollup-boilerplate');
-const tpWebpackTemplates = require('@popark/tp-webpack-boilerplate');
+const { write } = require('@popak/tp-share-utils');
+const tpRollupTemplates = require('@popak/tp-rollup-boilerplate');
+const tpWebpackTemplates = require('@popak/tp-webpack-boilerplate');
 
 class CopyBoilerplate extends Task {
   constructor(context, options) {
