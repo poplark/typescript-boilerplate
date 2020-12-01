@@ -25,6 +25,8 @@ class GetPkg extends Task {
     if (!getAuthorTask) throw new Error('Dependency task [getAuthor] not exists');
     setAuthor(this.pkg, getAuthorTask);
 
+    setModule(this.pkg, this.options.bundleTool);
+
     setScripts(this.pkg, this.options);
 
     setDevDependencies(this.pkg, this.options);
@@ -32,6 +34,13 @@ class GetPkg extends Task {
     this.done();
   }
 }
+
+function setModule(pkg, bundleTool) {
+  if (bundleTool === 'rollup') {
+    pkg.module = 'dist/index.esm.js'
+  }
+}
+
 
 function setDescription(pkg, description) {
   pkg.description = description;
