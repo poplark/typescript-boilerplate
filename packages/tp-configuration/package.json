@@ -20,7 +20,7 @@
     "configs"
   ],
   "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,6 @@
   },
   "dependencies": {
     "@popark/tp-share-utils": "^0.1.0"
-  }
+  },
+  "gitHead": "557f78406f54adc2869f00e849d96e48969f1880"
 }
