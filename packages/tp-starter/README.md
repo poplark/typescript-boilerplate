@@ -31,5 +31,5 @@ todo
 2. 支持 rollup √
 3. 添加 rollup 模板，配置文件等 √
 4. 使用 lerna 管理 webpack, rollup 等模板库 √
-5. init git
-6. install node_modules
+5. init git √
+6. install node_modules √

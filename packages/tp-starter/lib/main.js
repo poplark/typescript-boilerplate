@@ -61,11 +61,14 @@ function run(context, pkgName, options) {
     const copyBoilerplateTask = new CopyBoilerplate(context, options);
     scheduler.add(copyBoilerplateTask);
 
-    const initGitRepoTask = new InitGitRepo(context, options);
-    scheduler.add(initGitRepoTask, writePkgTask);
+    let initGitRepoTask;
+    if (hasGit()) {
+      initGitRepoTask = new InitGitRepo(context, options);
+      scheduler.add(initGitRepoTask, writePkgTask, writeReadmeTask, copyConfigurationsTask, copyBoilerplateTask);
+    }
 
     const installNodeModulesTask = new InstallNodeModules(context, options);
-    scheduler.add(installNodeModulesTask, writePkgTask);
+    scheduler.add(installNodeModulesTask, writePkgTask, writeReadmeTask, copyConfigurationsTask, copyBoilerplateTask, initGitRepoTask);
 
     scheduler.start();
   });
@@ -113,11 +116,5 @@ exports.create = async function(projectName) {
 
   const options = Object.assign({}, confirm, projectDescription, authorName, authorEmail, pm, bundle, initESLint, initTSDoc, initGitRepo);
 
-  console.log(options);
-
   await run(context, pkgName, options);
-
-  // const { execGit, execInstallPkg } = require('./execCommand');
-  // await execGit(context);
-  // await execInstallPkg(context, pkgManager);
 }

@@ -52,26 +52,28 @@ function setScripts(pkg, packageManager, bundleTool, initESLint, initTSDoc) {
   pkg.scripts = {
     clean: 'rm -rf dist && rm -rf types',
   };
+  /*
   switch (packageManager) {
     case 'npm':
-      pkg.scripts.prepare = `npm run clean && npm run build`;
+      pkg.scripts['prepare'] = `npm run clean && npm run build`;
       break;
     case 'yarn':
-      pkg.scripts.prepare = `yarn clean && yarn build`;
+      pkg.scripts['prepare'] = `yarn clean && yarn build`;
       break;
     default:
       console.warn('package manager not exists');
       break;
   }
+  */
 
   switch (bundleTool) {
     case 'webpack':
-      pkg.scripts.start = `webpack --progress --watch --config config/webpack.dev.js`;
-      pkg.scripts.build = `webpack --progress --config config/webpack.prod.js`;
+      pkg.scripts['start'] = `webpack --progress --watch --config config/webpack.dev.js`;
+      pkg.scripts['build'] = `webpack --progress --config config/webpack.prod.js`;
       break;
     case 'rollup':
-      pkg.scripts.start = `rollup -c --watch rollup.config.js`;
-      pkg.scripts.build = `rollup -c rollup.config.js`;
+      pkg.scripts['start'] = `rollup -c --watch rollup.config.js`;
+      pkg.scripts['build'] = `rollup -c rollup.config.js`;
       break;
     default:
       console.warn('bundle tool not exists');
@@ -79,12 +81,12 @@ function setScripts(pkg, packageManager, bundleTool, initESLint, initTSDoc) {
   }
 
   if (initESLint) {
-    pkg.scripts.lint = `eslint src --ext .ts`;
+    pkg.scripts['lint'] = `eslint src --ext .ts`;
     pkg.scripts['lint:fix'] = `eslint src --fix --ext .ts`;
   }
 
   if (initTSDoc) {
-    pkg.scripts.docs = 'typedoc';
+    pkg.scripts['docs'] = 'typedoc';
   }
 }
 

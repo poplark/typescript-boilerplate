@@ -11,7 +11,6 @@ module.exports.Scheduler = class Scheduler extends EventEmitter {
       this.todoTasks = this.todoTasks.filter(item => item !== task);
     });
     task.on('done', () => {
-      console.log('task done ', task.name);
       // 任务结束，就添加到已完成任务列表 [doneTasks] 中
       this.doneTasks.push(task);
       if (this.doneTasks.length === this.allTasks.length) {

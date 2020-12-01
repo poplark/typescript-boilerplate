@@ -24,12 +24,21 @@ class InstallNodeModules extends Task {
 
 async function execInstallPkg(context, pkgManager) {
   try {
-    console.log('安装依赖包...');
-    await execCommand(`${pkgManager} install`, context);
+    console.log(`使用 ${pkgManager} 安装依赖包...`);
+    switch (pkgManager) {
+      case 'yarn':
+        await execCommand(`${pkgManager}`, context);
+        break;
+      case 'npm':
+        await execCommand(`${pkgManager} install`, context);
+        break;
+      default:
+        break;
+    }
     console.log('安装依赖包... √');
   } catch(err) {
     console.error('安装依赖包... x');
-    console.error(`执行 ${pkgManager} install 失败`, err);
+    console.error(`执行 ${pkgManager} 安装失败`, err);
   }
 }
 
