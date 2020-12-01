@@ -25,9 +25,9 @@ class GetPkg extends Task {
     if (!getAuthorTask) throw new Error('Dependency task [getAuthor] not exists');
     setAuthor(this.pkg, getAuthorTask);
 
-    setScripts(this.pkg, this.options.packageManager, this.options.bundleTool, this.options.initESLint, this.options.initTSDoc);
+    setScripts(this.pkg, this.options);
 
-    setDevDependencies(this.pkg, this.options.bundleTool, this.options.initESLint, this.options.initTSDoc);
+    setDevDependencies(this.pkg, this.options);
 
     this.done();
   }
@@ -48,12 +48,12 @@ function setAuthor(pkg, getAuthorTask) {
   }
 }
 
-function setScripts(pkg, packageManager, bundleTool, initESLint, initTSDoc) {
+function setScripts(pkg, options) {
   pkg.scripts = {
     clean: 'rm -rf dist && rm -rf types',
   };
   /*
-  switch (packageManager) {
+  switch (options.packageManager) {
     case 'npm':
       pkg.scripts['prepare'] = `npm run clean && npm run build`;
       break;
@@ -66,7 +66,7 @@ function setScripts(pkg, packageManager, bundleTool, initESLint, initTSDoc) {
   }
   */
 
-  switch (bundleTool) {
+  switch (options.bundleTool) {
     case 'webpack':
       pkg.scripts['start'] = `webpack --progress --watch --config config/webpack.dev.js`;
       pkg.scripts['build'] = `webpack --progress --config config/webpack.prod.js`;
@@ -80,22 +80,26 @@ function setScripts(pkg, packageManager, bundleTool, initESLint, initTSDoc) {
       break;
   }
 
-  if (initESLint) {
+  if (options.initESLint) {
     pkg.scripts['lint'] = `eslint src --ext .ts`;
     pkg.scripts['lint:fix'] = `eslint src --fix --ext .ts`;
   }
 
-  if (initTSDoc) {
+  if (options.initCommitLint) {
+    pkg.scripts['commit'] = `git-cz`;
+  }
+
+  if (options.initTSDoc) {
     pkg.scripts['docs'] = 'typedoc';
   }
 }
 
-function setDevDependencies(pkg, bundleTool, initESLint, initTSDoc) {
+function setDevDependencies(pkg, options) {
   pkg.devDependencies = {
     typescript: `^4.0.5`,
   };
 
-  switch (bundleTool) {
+  switch (options.bundleTool) {
     case 'webpack':
       pkg.devDependencies['webpack'] = `^5.4.0`;
       pkg.devDependencies['webpack-cli'] = `^4.2.0`;
@@ -117,7 +121,7 @@ function setDevDependencies(pkg, bundleTool, initESLint, initTSDoc) {
       break;
   }
 
-  if (initESLint) {
+  if (options.initESLint) {
     pkg.devDependencies['@typescript-eslint/eslint-plugin'] = `^4.8.0`;
     pkg.devDependencies['@typescript-eslint/parser'] = `^4.8.0`;
     pkg.devDependencies['eslint'] = '^7.13.0';
@@ -141,9 +145,33 @@ function setDevDependencies(pkg, bundleTool, initESLint, initTSDoc) {
     }
   }
 
-  if (initTSDoc) {
+  if (options.initCommitLint) {
+    pkg.devDependencies['@commitlint/config-conventional'] = `^11.0.0`;
+    pkg.devDependencies['commitlint'] = `^11.0.0`;
+    // 自动生成  changelog
+    // pkg.devDependencies['conventional-changelog'] = `^3.1.24`;
+    pkg.devDependencies['cz-conventional-changelog'] = `^3.3.0`;
+    pkg.config = {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    }
+    if (pkg.husky) {
+      pkg.husky.hooks = pkg.husky.hooks || {};
+      pkg.husky.hooks['commit-msg'] = "commitlint -e $GIT_PARAMS";
+    } else {
+      pkg.husky = {
+        hooks: {
+          "pre-commit": "lint-staged",
+          "commit-msg": "commitlint -e $GIT_PARAMS"
+        }
+      }
+    }
+  }
+
+  if (options.initTSDoc) {
     pkg.devDependencies['typedoc'] = `^0.19.2`;
-    if (initESLint) {
+    if (options.initESLint) {
       pkg['lint-staged']['src/**/*.ts'] = pkg['lint-staged']['src/**/*.ts'].concat([
         'typedoc',
         'git add docs'

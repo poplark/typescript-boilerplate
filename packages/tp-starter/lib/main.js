@@ -6,6 +6,7 @@ const packageManagerQuestion = require('./questions/packageManager');
 const bundleToolQuestion = require('./questions/bundleTool');
 const initGitRepoQuestion = require('./questions/initGitRepo');
 const initESLintQuestion = require('./questions/initESLint');
+const initCommitLintQuestion = require('./questions/initCommitLint');
 const initTSDocQuestion = require('./questions/initTSDoc');
 const authorNameQuestion = require('./questions/authorName');
 const authorEmailQuestion = require('./questions/authorEmail');
@@ -111,10 +112,13 @@ exports.create = async function(projectName) {
   const initESLint = await inquirer.prompt(initESLintQuestion);
   clearConsole();
 
+  const initCommitLint = await inquirer.prompt(initCommitLintQuestion);
+  clearConsole();
+
   const initTSDoc = await inquirer.prompt(initTSDocQuestion);
   clearConsole();
 
-  const options = Object.assign({}, confirm, projectDescription, authorName, authorEmail, pm, bundle, initESLint, initTSDoc, initGitRepo);
+  const options = Object.assign({}, confirm, projectDescription, authorName, authorEmail, pm, bundle, initESLint, initCommitLint, initTSDoc, initGitRepo);
 
   await run(context, pkgName, options);
 }

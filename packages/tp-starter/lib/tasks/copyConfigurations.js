@@ -13,7 +13,7 @@ class CopyConfigurations extends Task {
     this.start();
 
     tpConfiguration
-      .run(this.options.initGitRepo, this.options.initESLint, this.options.initTSDoc)
+      .run(this.options.initGitRepo, this.options.initESLint, this.options.initCommitLint, this.options.initTSDoc)
       .then(async (fileReadStreamMap) => {
         const fileStreams = fileReadStreamMap.entries();
         const promises = [];
