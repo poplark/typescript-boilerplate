@@ -1,6 +1,5 @@
 {
   "name": "@popak/typescript-boilerplate",
-  "version": "1.2.2",
   "workspaces": [
     "packages/*"
   ],
