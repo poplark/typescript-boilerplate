@@ -1,6 +1,6 @@
 {
   "name": "@popak/tp-starter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A fast starter to create a normal typescript project",
   "keywords": [
     "typescript",
