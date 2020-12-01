@@ -1,23 +1,26 @@
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
 
 async function execCommand(command, context) {
+  /**
+   * traditional way
+   */
+  const args = command.split(' ');
+  const cmd = args.shift();
   return new Promise((resolve, reject) => {
-    exec(command, {
-      cwd: context
-    }, (error, stdout, stderror) => {
-      if (error) {
-        reject(error);
+    const child = spawn(cmd, args, {
+      cwd: context,
+      stdio: ['inherit', 'inherit', 'inherit']
+    });
+
+    child.on('close', code => {
+      if (code !== 0) {
+        reject(`command failed: ${command}`);
         return;
       }
-      if (stderror) {
-        reject(new Error(stderror));
-        return;
-      }
-      resolve(stdout);
+      resolve();
     });
   });
 }
-
 
 module.exports = {
   execCommand
