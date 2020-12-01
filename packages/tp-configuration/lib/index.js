@@ -1,7 +1,7 @@
 const path = require('path');
 const { getReadStreamMap } = require('@popak/tp-share-utils');
 
-module.exports.run = async function(initGitRepo, initESLint, initTSDoc) {
+module.exports.run = async function(initGitRepo, initESLint, initCommitLint, initTSDoc) {
   let result = new Map();
   const dir = path.join(__dirname, '../configs');
   const templates = [
@@ -15,6 +15,9 @@ module.exports.run = async function(initGitRepo, initESLint, initTSDoc) {
     templates.push('.eslintignore');
     templates.push('.eslintrc.js');
     templates.push('.prettierrc.js');
+  }
+  if (initCommitLint) {
+    templates.push('commitlint.config.js');
   }
   if (initTSDoc) {
     templates.push('typedoc.json');
