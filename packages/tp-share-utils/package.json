@@ -1,6 +1,6 @@
 {
   "name": "@popark/tp-share-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Common utils of typescript project",
   "keywords": [
     "utils",

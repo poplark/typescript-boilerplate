@@ -1,6 +1,6 @@
 {
   "name": "@popark/tp-webpack-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A boilerplate of typescript project with webpack.",
   "keywords": [
     "typescript",
@@ -34,6 +34,6 @@
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
   "dependencies": {
-    "@popark/tp-share-utils": "^0.0.1"
+    "@popark/tp-share-utils": "^0.1.0"
   }
 }
