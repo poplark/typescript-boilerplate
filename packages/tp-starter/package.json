@@ -1,6 +1,6 @@
 {
   "name": "@popak/tp-starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A fast starter to create a normal typescript project",
   "keywords": [
     "typescript",
@@ -37,10 +37,10 @@
     "url": "https://github.com/poplark/typescript-boilerplate/issues"
   },
   "dependencies": {
-    "@popak/tp-configuration": "^0.1.1",
-    "@popak/tp-rollup-boilerplate": "^0.1.1",
-    "@popak/tp-share-utils": "^0.1.1",
-    "@popak/tp-webpack-boilerplate": "^0.1.1"
+    "@popak/tp-configuration": "^0.1.2",
+    "@popak/tp-rollup-boilerplate": "^0.1.2",
+    "@popak/tp-share-utils": "^0.1.2",
+    "@popak/tp-webpack-boilerplate": "^0.1.2"
   },
   "gitHead": "cf57d73b5e4cd62e8803bb6fe924cb893d545a3c"
 }
