@@ -34,3 +34,6 @@ todo
 5. init git √
 6. install node_modules √
 7. 支持 commit lint √
+8. 检查 project 是否存在，提供 覆盖、合并、取消的选择
+9. 支持 test 测试初始化
+10. 自动 init commit
