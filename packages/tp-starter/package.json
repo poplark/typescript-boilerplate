@@ -40,7 +40,12 @@
     "@popak/tp-configuration": "^0.1.3",
     "@popak/tp-rollup-boilerplate": "^0.1.2",
     "@popak/tp-share-utils": "^0.1.2",
-    "@popak/tp-webpack-boilerplate": "^0.1.2"
+    "@popak/tp-webpack-boilerplate": "^0.1.2",
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.1",
+    "minimist": "^1.2.5"
   },
   "gitHead": "cf57d73b5e4cd62e8803bb6fe924cb893d545a3c"
 }
