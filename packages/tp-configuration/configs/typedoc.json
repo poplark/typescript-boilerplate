@@ -1,11 +1,10 @@
 {
-  "mode": "file",
   "out": "docs",
   "exclude": [],
+  "entryPoints": ["src/index.ts"],
   "disableSources": true,
   "excludePrivate": true,
   "excludeProtected": true,
-  "readme": "README.md",
-  "stripInternal": true,
-  "excludeNotExported": true
+  "excludeInternal": true,
+  "readme": "none"
 }
