@@ -61,19 +61,18 @@ function setScripts(pkg, options) {
   pkg.scripts = {
     clean: 'rm -rf dist && rm -rf types',
   };
-  /*
+
   switch (options.packageManager) {
     case 'npm':
-      pkg.scripts['prepare'] = `npm run clean && npm run build`;
+      pkg.scripts['prepublish'] = `npm run clean && npm run build`;
       break;
     case 'yarn':
-      pkg.scripts['prepare'] = `yarn clean && yarn build`;
+      pkg.scripts['prepublish'] = `yarn clean && yarn build`;
       break;
     default:
       console.warn('package manager not exists');
       break;
   }
-  */
 
   switch (options.bundleTool) {
     case 'webpack':
@@ -99,7 +98,7 @@ function setScripts(pkg, options) {
   }
 
   if (options.initTSDoc) {
-    pkg.scripts['docs'] = 'typedoc';
+    pkg.scripts['docs'] = 'typedoc --plugin none'; // 默认不使用 typedoc-plugin-markdown 生成 markdown 类的文档
   }
 }
 
@@ -179,10 +178,11 @@ function setDevDependencies(pkg, options) {
   }
 
   if (options.initTSDoc) {
-    pkg.devDependencies['typedoc'] = `^0.19.2`;
+    pkg.devDependencies['typedoc'] = `^0.21.2`;
+    pkg.devDependencies['typedoc-plugin-markdown'] = `^3.10.2`;
     if (options.initESLint) {
       pkg['lint-staged']['src/**/*.ts'] = pkg['lint-staged']['src/**/*.ts'].concat([
-        'typedoc',
+        'typedoc --plugin none',
         'git add docs'
       ]);
     }
