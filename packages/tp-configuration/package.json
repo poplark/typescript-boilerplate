@@ -1,6 +1,6 @@
 {
   "name": "@popak/tp-configuration",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Common configuration of typescript project created by tps",
   "keywords": [
     "typescript",
