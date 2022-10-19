@@ -11,8 +11,10 @@ class InitGitRepo extends Task {
   run() {
     this.start();
 
+    const getAuthorTask = this.dependencies.find(item => item.name === 'getAuthor');
+
     if (hasGit() && this.options.initGitRepo) {
-      execGit(this.context)
+      execGit(this.context, getAuthorTask)
         .then(() => {
           this.done();
         })
@@ -24,10 +26,16 @@ class InitGitRepo extends Task {
   }
 }
 
-async function execGit(context) {
+async function execGit(context, getAuthorTask) {
   try {
     console.log('初始化代码库...');
     await execCommand('git init', context);
+    if (getAuthorTask && getAuthorTask.authorName) {
+      await execCommand(`git config user.name ${getAuthorTask.authorName}`, context);
+    }
+    if (getAuthorTask && getAuthorTask.authorEmail) {
+      await execCommand(`git config user.email ${getAuthorTask.authorEmail}`, context);
+    }
     console.log('初始化代码库... √');
   } catch(err) {
     console.log('初始化代码库... x');

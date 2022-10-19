@@ -65,7 +65,7 @@ function run(context, pkgName, options) {
     let initGitRepoTask;
     if (hasGit()) {
       initGitRepoTask = new InitGitRepo(context, options);
-      scheduler.add(initGitRepoTask, writePkgTask, writeReadmeTask, copyConfigurationsTask, copyBoilerplateTask);
+      scheduler.add(initGitRepoTask, getAuthorTask, writePkgTask, writeReadmeTask, copyConfigurationsTask, copyBoilerplateTask);
     }
 
     const installNodeModulesTask = new InstallNodeModules(context, options);
