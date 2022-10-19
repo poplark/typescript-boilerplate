@@ -30,8 +30,8 @@ export default {
     },
   ],
   plugins: [
-    json(),
     resolve(),
+    json(),
     commonjs(),
     typescript({
       useTsconfigDeclarationDir: true,
